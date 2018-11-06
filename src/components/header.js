@@ -4,10 +4,7 @@ import PropTypes from 'prop-types'
 
 import {
   Collapse,
-  Navbar,
   NavbarToggler,
-  NavbarBrand,
-  Nav,
   NavItem,
 } from 'reactstrap'
 
@@ -28,56 +25,30 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color="dark" dark>
-          <NavbarBrand href="/" className="mr-auto">
-            {this.props.siteTitle}
-          </NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav navbar>
-              {this.props.navItems.map((item, index) => (
-                <NavItem key={index}>
-                  <Link
-                    className="nav-link"
-                    // activeStyle={{ color: 'red' }}
-                    activeClassName="active"
-                    to={item.to}
-                  >
-                    {item.name}
-                  </Link>
-                </NavItem>
-              ))}
-              {/* <NavItem>
+      <div
+        className="navbar navbar-expand-md navbar-light bg-light px-md-5 col-12 ml-auto mr-auto py-1"
+        id="myNav"
+      >
+        <Link to="/" className="navbar-brand py-0">
+          {this.props.siteTitle}
+        </Link>
+        <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+        <Collapse isOpen={!this.state.collapsed} navbar>
+          <ul className="navbar-nav ml-auto align-items-center">
+            {this.props.navItems.map((item, index) => (
+              <NavItem key={index}>
                 <Link
                   className="nav-link"
-                  activeStyle={{ color: 'red' }}
-                  to="/"
+                  // activeStyle={{ color: 'red' }}
+                  activeClassName="active"
+                  to={item.to}
                 >
-                  Home
+                  {item.name}
                 </Link>
               </NavItem>
-              <NavItem>
-                <Link
-                  className="nav-link"
-                  activeStyle={{ color: 'red' }}
-                  to="/about/"
-                >
-                  About
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link
-                  className="nav-link"
-                  activeStyle={{ color: 'red' }}
-                  to="/services/"
-                >
-                  Services
-                </Link>
-              </NavItem> */}
-            </Nav>
-          </Collapse>
-        </Navbar>
+            ))}
+          </ul>
+        </Collapse>
       </div>
     )
   }
