@@ -2,14 +2,25 @@ import React from 'react'
 // import { Link } from 'gatsby'
 
 import Layout from '../layouts/layout'
-// import Image from '../components/image'
 
-const IndexPage = () => (
+import { graphql } from 'gatsby'
+
+const IndexPage = ({ data }) => (
   <Layout>
     <h1>Welcome to my website</h1>
-    <p>This is a sample site.</p>
+    <p>{data.site.siteMetadata.description}</p>
     <p>Now go build something great.</p>
   </Layout>
 )
+
+export const query = graphql`
+  query IndexPageQuery {
+    site {
+      siteMetadata {
+        description
+      }
+    }
+  }
+`
 
 export default IndexPage
