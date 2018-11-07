@@ -50,7 +50,7 @@ const particlesConfig = {
     events: {
       onhover: {
         enable: true,
-        mode: 'repulse',
+        mode: 'grab',
       },
       resize: true,
     },
@@ -58,6 +58,10 @@ const particlesConfig = {
       repulse: {
         distance: 100,
         duration: 0,
+      },
+      grab: {
+        distance: 200,
+        // duration: 2,
       },
     },
   },
@@ -71,6 +75,9 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            navTitle
+            description
+            keywords
           }
         }
       }
@@ -80,23 +87,41 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            {
+              name: 'description',
+              content: data.site.siteMetadata.description,
+            },
+            {
+              name: 'keywords',
+              content: data.site.siteMetadata.keywords,
+            },
           ]}
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} navItems={navItems} />
-        <Particles
-          params={particlesConfig}
-          style={{
-            width: '100%',
-            backgroundColor: `rgb(49, 49, 49)`,
-          }}
-          height={'18rem'}
+        <Header
+          navBarTitle={data.site.siteMetadata.navTitle}
+          navItems={navItems}
         />
-        <div className={'container-fluid text-center particles-text'}>
-          <h1 className="header-text mb-1">Software and Services</h1>
+        <div
+          class="container-fluid px-0 align-middle header-container"
+          style={{ height: '18rem' }}
+        >
+          <Particles
+            params={particlesConfig}
+            style={{
+              top: '0px',
+              position: 'absolute',
+              width: '100%',
+              backgroundColor: `rgb(49, 49, 49)`,
+            }}
+            height={'100%'}
+          />
+
+          <div class="header-text-container mx-auto text-center">
+            <h1 class="header-text mb-1">Software and Services</h1>
+            <p class="lead mb-0">Built for your needs.</p>
+          </div>
         </div>
 
         <div
@@ -109,7 +134,9 @@ const Layout = ({ children }) => (
         >
           {children}
         </div>
-        {/* <footer>Footer</footer> */}
+        <footer className="py-5 text-muted text-center text-small">
+          <p className="mb-0">© 2016-2018 Hepa Solutions</p>
+        </footer>
       </>
     )}
   />
