@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Hepa Software Solutions',
-    description: 'Personal website.'
+    title: 'Hepa Solutions',
+    navTitle: 'Hepa Solutions',
+    description: 'Personal website.',
+    keywords: 'software, services'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -13,7 +15,15 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/markdown`,
+      },
+    },
     'gatsby-transformer-sharp',
+    'gatsby-transformer-remark',
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-manifest`,
