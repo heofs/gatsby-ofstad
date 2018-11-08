@@ -1,23 +1,57 @@
 import React from 'react'
-// import { Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../layouts/layout'
 
-import { graphql } from 'gatsby'
+import TextContainer from '../components/TextContainer'
+import TextImageContainer from '../components/TextImageContainer'
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <h1>Welcome to my website</h1>
-    <p>{data.site.siteMetadata.description}</p>
-    <p>Now go build something great.</p>
-  </Layout>
-)
+import ScienceImage from '../images/svg/science.svg'
+import ServerImage from '../images/svg/server.svg'
 
-export const query = graphql`
+const IndexPage = ({ data }) => {
+  const { markdownRemark } = data
+  const { frontmatter } = markdownRemark
+  //   const { frontmatter, html } = markdownRemark
+  return (
+    <Layout
+      title={frontmatter.particlesTitle}
+      subTitle={frontmatter.particlesSubTitle}
+    >
+      <TextContainer title={frontmatter.textContainerTitle} greyBG={true}>
+        {frontmatter.textContainerText}
+      </TextContainer>
+      <TextImageContainer
+        title={frontmatter.firstContainerTitle}
+        image={ScienceImage}
+        imageLeft={false}
+        greyBG={false}
+      >
+        {frontmatter.firstContainerText}
+      </TextImageContainer>
+      <TextImageContainer
+        title={frontmatter.secondContainerTitle}
+        image={ServerImage}
+        imageLeft={true}
+        greyBG={true}
+      >
+        {frontmatter.secondContainerText}
+      </TextImageContainer>
+    </Layout>
+  )
+}
+export const pageQuery = graphql`
   query IndexPageQuery {
-    site {
-      siteMetadata {
-        description
+    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      frontmatter {
+        particlesTitle
+        particlesSubTitle
+        textContainerTitle
+        textContainerText
+        firstContainerTitle
+        firstContainerText
+        secondContainerTitle
+        secondContainerText
       }
     }
   }
