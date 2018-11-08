@@ -9,9 +9,10 @@ import './reduction.scss'
 import Particles from 'react-particles-js'
 
 const navItems = [
-  //   { to: '/', name: 'Home' },
-  { to: '/about', name: 'About Us' },
+  { to: '/', name: 'Home' },
+  { to: '/about', name: 'About' },
   { to: '/services', name: 'Services' },
+  { to: '/blog', name: 'Blog' },
 ]
 
 const particlesConfig = {
@@ -68,7 +69,7 @@ const particlesConfig = {
   retina_detect: true,
 }
 
-const Layout = ({ children }) => (
+const Layout = ({ children, title, subTitle }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -104,7 +105,7 @@ const Layout = ({ children }) => (
           navItems={navItems}
         />
         <div
-          class="container-fluid px-0 align-middle header-container"
+          className="container-fluid px-0 align-middle header-container"
           style={{ height: '18rem' }}
         >
           <Particles
@@ -115,21 +116,23 @@ const Layout = ({ children }) => (
               width: '100%',
               backgroundColor: `rgb(49, 49, 49)`,
             }}
-            height={'100%'}
+            height={'18rem'}
           />
 
-          <div class="header-text-container mx-auto text-center">
-            <h1 class="header-text mb-1">Software and Services</h1>
-            <p class="lead mb-0">Built for your needs.</p>
+          <div className="header-text-container mx-auto text-center">
+            <h1 className="header-text mb-1">{title}</h1>
+            <p className="lead mb-0">{subTitle}</p>
+            {/* {subTitle ? (<p className="lead mb-0">{subTitle}</p>) : null} */}
           </div>
         </div>
 
         <div
           style={{
             margin: '0 auto',
-            maxWidth: 1100,
+            // maxWidth: 1100,
             padding: '0px',
             paddingTop: 0,
+            textAlign: 'center',
           }}
         >
           {children}
