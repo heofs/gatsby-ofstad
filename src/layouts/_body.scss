@@ -1,0 +1,33 @@
+@media (min-width: $--breakpoint-xs) {
+  $image-height: 15rem;
+  .product-main-image {
+    height: $image-height;
+    margin-bottom: 1rem;
+  }
+  .product-image-container {
+    max-width: $image-height;
+    padding: 0px;
+  }
+  .product-row {
+    justify-content: center;
+  }
+  .product-text {
+    text-align: center;
+  }
+}
+
+@media (min-width: $--breakpoint-md) {
+  $image-height: 15rem;
+  .product-main-image {
+    margin-bottom: 0px;
+  }
+  .product-row {
+    justify-content: start;
+  }
+  .product-row {
+    justify-content: start;
+  }
+  .product-text {
+    text-align: start;
+  }
+}
