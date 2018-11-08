@@ -2,11 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import {
-  Collapse,
-  NavbarToggler,
-  NavItem,
-} from 'reactstrap'
+import { Collapse, NavbarToggler, NavItem } from 'reactstrap'
 
 class Header extends React.Component {
   constructor(props) {
@@ -30,7 +26,7 @@ class Header extends React.Component {
         id="myNav"
       >
         <Link to="/" className="navbar-brand py-0">
-          {this.props.siteTitle}
+          {this.props.navBarTitle}
         </Link>
         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
         <Collapse isOpen={!this.state.collapsed} navbar>
