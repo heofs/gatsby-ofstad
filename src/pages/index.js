@@ -26,6 +26,7 @@ const IndexPage = ({ data }) => {
         image={ScienceImage}
         imageLeft={false}
         greyBG={false}
+        spinningImage={true}
       >
         {frontmatter.firstContainerText}
       </TextImageContainer>
