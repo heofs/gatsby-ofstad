@@ -2,8 +2,9 @@ module.exports = {
   siteMetadata: {
     title: 'Hepa Solutions',
     navTitle: 'Hepa Solutions',
-    description: 'Personal website.',
-    keywords: 'software, services'
+    description:
+      'Software solutions for small businesses. We design and setup modern web services, like web applications and APIs for gathering data.',
+    keywords: 'software, web development, data, raspberry pi, analytics',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -28,8 +29,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Hepa Software',
+        short_name: 'Hepa',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
