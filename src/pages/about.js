@@ -1,9 +1,7 @@
 import React from 'react'
-import { Button } from 'reactstrap'
 import { graphql } from 'gatsby'
 
 import Layout from '../layouts/layout'
-import TextContainer from '../components/TextContainer'
 
 const AboutPage = ({ data }) => {
   const { markdownRemark } = data
@@ -13,15 +11,11 @@ const AboutPage = ({ data }) => {
       title={frontmatter.particlesTitle}
       subTitle={frontmatter.particlesSubTitle}
     >
-      <TextContainer title="Hi" greyBG={true}>
-        Text
-      </TextContainer>
       <div
-        className="index-content"
+        className="index-content m-0 py-4 px-2 border"
+        style={{ backgroundColor: '#f6f6f6' }}
         dangerouslySetInnerHTML={{ __html: html }}
       />
-      <h1>About Page</h1>
-      <Button color="danger">Danger!</Button>
     </Layout>
   )
 }
