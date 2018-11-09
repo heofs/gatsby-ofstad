@@ -12,13 +12,13 @@ const navItems = [
   { to: '/', name: 'Home' },
   { to: '/about', name: 'About' },
   { to: '/services', name: 'Services' },
-  { to: '/blog', name: 'Blog' },
+  //   { to: '/blog', name: 'Blog' },
 ]
 
 const particlesConfig = {
   particles: {
     number: {
-      value: 100,
+      value: 50,
       density: {
         enable: true,
         value_area: 800,
@@ -148,5 +148,16 @@ const Layout = ({ children, title, subTitle }) => (
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
+// export const pageQuery = graphql`
+//   query ServicesPageQuery {
+//     markdownRemark(frontmatter: { templateKey: { eq: "layout-structure" } }) {
+//       frontmatter {
+//         templateKey
+//         navItems
+//       }
+//     }
+//   }
+// `
 
 export default Layout
