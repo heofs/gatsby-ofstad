@@ -4,7 +4,7 @@ particlesTitle: "Software and Services"
 particlesSubTitle: "Built for your needs"
 
 textContainerTitle: "What we offer"
-textContainerText: "We build visualy appealing web applications that interface with data collection points. We also set up systems to gather data from sensors and store it in a database."
+textContainerText: "We build web applications that interface with data collection points. We also set up the systems that gather the data from your preferred sensor."
 
 firstContainerTitle: "Modern Technology"
 firstContainerText: "Built on modern frameworks and services to make your application future proof. We use technologies like ReactJS to make it look nice and be as efficient as possible. To interface with your data, we use mainly Python."
