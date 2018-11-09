@@ -1,7 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const TextImageContainer = ({ title, children, image, imageLeft, greyBG }) => {
+const TextImageContainer = ({
+  title,
+  children,
+  image,
+  imageLeft,
+  greyBG,
+  spinningImage,
+}) => {
   const imageClassNames = () => {
     if (imageLeft === true) {
       return 'col-xs-12 col-md- text-center product-image-container'
@@ -28,7 +35,7 @@ const TextImageContainer = ({ title, children, image, imageLeft, greyBG }) => {
       <div className="row col-xs-12 col-xl-10 product-row py-4 mx-auto justify-content-center">
         <div className={imageClassNames()}>
           <img
-            className="product-main-image"
+            className={spinningImage ? 'product-main-image spinning-image' : 'product-main-image'}
             style={{ height: '12rem' }}
             src={image}
             alt="website illustration"
@@ -52,6 +59,7 @@ TextImageContainer.propTypes = {
   image: PropTypes.string,
   imageLeft: PropTypes.bool,
   greyBG: PropTypes.bool,
+  spinningImage: PropTypes.bool,
 }
 
 export default TextImageContainer
