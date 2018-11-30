@@ -12,6 +12,6 @@ Our philosophy is to provide high quality solutions for an affordable price.
 
 
 ### Get in touch
-We are reachable at any time on our email: [customer@hepa.no](mailto:customer@hepa.no).
+We are reachable at any time on our email: [customer@ofstad.io](mailto:customer@ofstad.io).
 
 Please, do not hesitate to contact us if you have any queries!

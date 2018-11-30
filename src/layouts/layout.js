@@ -138,7 +138,7 @@ const Layout = ({ children, title, subTitle }) => (
           {children}
         </div>
         <footer className="py-5 text-muted text-center text-small">
-          <p className="mb-0">© 2016-2018 Hepa Solutions</p>
+          <p className="mb-0">© 2018 - Ofstad Enterprise</p>
         </footer>
       </>
     )}

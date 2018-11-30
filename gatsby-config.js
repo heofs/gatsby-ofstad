@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Hepa Solutions',
-    navTitle: 'Hepa Solutions',
+    title: 'Ofstad Enterprise',
+    navTitle: 'Ofstad Enterprise',
     description:
       'Software solutions for small businesses. We design and setup modern web services, like web applications and APIs for gathering data.',
     keywords: 'software, web development, data, raspberry pi, analytics',
