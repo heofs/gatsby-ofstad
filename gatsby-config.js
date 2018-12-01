@@ -29,8 +29,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Hepa Software',
-        short_name: 'Hepa',
+        name: 'Ofstad Enterprise',
+        short_name: 'Ofstad',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
