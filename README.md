@@ -7,7 +7,7 @@
   Ofstad.IO Gatsby Website
 </h1>
 
-Homepage for [ofstad.io](https://ofstad.io/)._
+Homepage for [ofstad.io](https://ofstad.io/).
 
 ## 🚀 Quick start
 
