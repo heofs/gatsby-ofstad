@@ -26,18 +26,18 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
     'gatsby-plugin-sharp',
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: 'Ofstad Enterprise',
-    //     short_name: 'Ofstad',
-    //     start_url: '/',
-    //     background_color: '#663399',
-    //     theme_color: '#663399',
-    //     display: 'minimal-ui',
-    //     icon: 'src/images/cube.png', // This path is relative to the root of the site.
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Ofstad Enterprise',
+        short_name: 'Ofstad',
+        start_url: '/',
+        background_color: '#663399',
+        theme_color: '#663399',
+        display: 'browser',
+        icon: 'src/images/cube.png', // This path is relative to the root of the site.
+      },
+    },
     'gatsby-plugin-offline',
   ],
 }
