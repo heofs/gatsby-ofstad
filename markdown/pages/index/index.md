@@ -1,15 +1,15 @@
 ---
 templateKey: index-page
-particlesTitle: "Software and Services"
-particlesSubTitle: "Built for your needs"
+particlesTitle: "Data harvesting from sensors"
+particlesSubTitle: "Industrial sensors uploading data to the cloud for analysis."
 
 textContainerTitle: "What we offer"
-textContainerText: "We build web applications that interface with data collection points. We also set up the systems that gather the data from your preferred sensor."
+textContainerText: "We build services that interface with data collection points. We set up the systems that gather the data from your preferred sensor. We will then draw meaning from the large amounts of data by analysing and visualizing the data using modern techniques."
 
-firstContainerTitle: "Modern Technology"
-firstContainerText: "Built on modern frameworks and services to make your application future proof. We use technologies like ReactJS to make it look nice and be as efficient as possible. To interface with your data, we use Python and JavaScript."
+firstContainerTitle: "A Modern Stack"
+firstContainerText: "Built using modern electronics, frameworks and services to make your application future proof. We use technologies like Machine Learning, Python, single-board computers, Google Cloud, Big Data and Data Mining to deliver the best possible service to our customers."
 
-secondContainerTitle: "Reliable Service"
-secondContainerText: "Hosted in the large cloud services like Google Cloud and DigitalOcean. For some requirements a more lightweight solution will be a better choice."
+secondContainerTitle: "Reliability"
+secondContainerText: "Stability, reliability and security for our services is one of the most important parts of what we do, that is why we offer hosting your solution in the cloud. In some situations an onsite server can be used if it is deemed to be the better solution to your problem."
 ---
 This is index content
