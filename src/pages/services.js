@@ -6,9 +6,9 @@ import Layout from '../layouts/layout'
 // import TextContainer from '../components/TextContainer'
 import TextImageContainer from '../components/TextImageContainer'
 
-import WebsiteImage from '../images/svg/browser.svg'
-import CloudImage from '../images/svg/cloud.svg'
+import SensorImage from '../images/svg/bio-sensor.svg'
 import AnalyticsImage from '../images/svg/analytics.svg'
+import CloudImage from '../images/svg/cloud.svg'
 
 const ServicesPage = ({ data }) => {
   const { markdownRemark } = data
@@ -17,7 +17,7 @@ const ServicesPage = ({ data }) => {
     <Layout title={frontmatter.particlesTitle}>
       <TextImageContainer
         title={frontmatter.firstContainerTitle}
-        image={WebsiteImage}
+        image={SensorImage}
         imageLeft={true}
         greyBG={true}
       >
@@ -25,7 +25,7 @@ const ServicesPage = ({ data }) => {
       </TextImageContainer>
       <TextImageContainer
         title={frontmatter.secondContainerTitle}
-        image={CloudImage}
+        image={AnalyticsImage}
         imageLeft={false}
         greyBG={false}
       >
@@ -33,7 +33,7 @@ const ServicesPage = ({ data }) => {
       </TextImageContainer>
       <TextImageContainer
         title={frontmatter.thirdContainerTitle}
-        image={AnalyticsImage}
+        image={CloudImage}
         imageLeft={true}
         greyBG={true}
       >
