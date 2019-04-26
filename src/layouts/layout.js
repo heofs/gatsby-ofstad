@@ -12,7 +12,7 @@ const navItems = [
   { to: '/', name: 'Home' },
   { to: '/about', name: 'About' },
   { to: '/services', name: 'Services' },
-  //   { to: '/blog', name: 'Blog' },
+  { to: '/blog', name: 'Blog' },
 ]
 
 const particlesConfig = {
