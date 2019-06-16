@@ -12,7 +12,7 @@ import ServerImage from '../images/svg/server.svg'
 const IndexPage = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter } = markdownRemark
-  //   const { frontmatter, html } = markdownRemark
+
   return (
     <Layout
       title={frontmatter.particlesTitle}
@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
         image={ScienceImage}
         imageLeft={false}
         greyBG={false}
-        spinningImage={true}
+        spinningImage={false}
       >
         {frontmatter.firstContainerText}
       </TextImageContainer>

@@ -10,9 +10,9 @@ import Particles from 'react-particles-js'
 
 const navItems = [
   { to: '/', name: 'Home' },
+  { to: '/blog', name: 'Blog' },
   { to: '/about', name: 'About' },
   { to: '/services', name: 'Services' },
-  //   { to: '/blog', name: 'Blog' },
 ]
 
 const particlesConfig = {
@@ -138,7 +138,9 @@ const Layout = ({ children, title, subTitle }) => (
           {children}
         </div>
         <footer className="py-5 text-muted text-center text-small">
-          <p className="mb-0">© 2018 - Ofstad Enterprise</p>
+          <p className="mb-0">
+            © {new Date().getFullYear()} - Ofstad Enterprise
+          </p>
         </footer>
       </>
     )}
