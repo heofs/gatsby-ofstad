@@ -8,6 +8,7 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+//   filter: { fileAbsolutePath: { regex: "/blog/" } }
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -16,7 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
     `
       {
         allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/blog/" } }
+          filter: { fields: { sourceInstanceName: { eq: "blog" } } }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -44,7 +45,7 @@ exports.createPages = ({ graphql, actions }) => {
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
-      console.warn('post.node.fields.slug -> ', post.node.fields.slug)
+
       createPage({
         path: `${post.node.fields.slug}`,
         component: blogPost,
@@ -68,7 +69,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const fileNode = getNode(node.parent)
     const pathPrefix = fileNode.sourceInstanceName
 
-    createNodeField({ node, name: 'slug', value: `/${pathPrefix}${value}` })
+    // Remove trailing slash from url.
+    const slug = value.substring(0, value.length - 1)
+
+    createNodeField({ node, name: 'slug', value: `/${pathPrefix}${slug}` })
     createNodeField({ node, name: 'sourceInstanceName', value: pathPrefix })
   }
 }
