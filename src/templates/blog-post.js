@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 
+import Bio from '../components/Bio'
 import Layout from '../layouts/layout'
 import theme from '../constants/theme'
 
@@ -9,10 +10,7 @@ const BlogContent = styled.div`
   max-width: ${theme.contentWidth}px;
   margin: 0 auto;
   text-align: left;
-
-  h1 {
-    text-align: center;
-  }
+  margin-top: 2em;
 `
 class BlogPostTemplate extends React.Component {
   render() {
@@ -21,10 +19,11 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout title={post.frontmatter.title} subTitle={'Ofstad.io'}>
+      <Layout title={'Ofstad.io'}>
         <BlogContent>
           <h1>{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
+          <Bio />
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr />
 

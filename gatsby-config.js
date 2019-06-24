@@ -1,10 +1,14 @@
 module.exports = {
   siteMetadata: {
     title: 'Ofstad Enterprise',
+    author: 'Henning Ofstad',
     navTitle: 'Ofstad Enterprise',
     description:
       'Software solutions for small businesses. We design and setup modern web services, like web applications and APIs for gathering data.',
     keywords: 'software, web development, data, raspberry pi, analytics',
+    social: {
+      github: `heofs`,
+    },
   },
   plugins: [
     {
@@ -14,13 +18,13 @@ module.exports = {
         name: `blog`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/content/assets`,
+    //     name: `assets`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -49,7 +53,7 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'browser',
-        icon: 'src/images/cube.png', // This path is relative to the root of the site.
+        icon: 'src/images/svg/big-data.svg', // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-offline',

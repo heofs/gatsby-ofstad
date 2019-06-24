@@ -3,14 +3,15 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../layouts/layout'
 import styled from 'styled-components'
 import theme from '../constants/theme'
-
+import Bio from '../components/Bio'
 // import TextContainer from '../components/TextContainer'
 
 const BlogList = styled.div`
   max-width: ${theme.contentWidth}px;
   margin: 0 auto;
-  margin-top: 3em;
+  /* margin-top: 3em; */
   text-align: left;
+  padding: 0 1.5em;
 `
 
 class BlogPage extends React.Component {
@@ -20,6 +21,7 @@ class BlogPage extends React.Component {
     return (
       <Layout title="Blog">
         <BlogList>
+          <Bio />
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
