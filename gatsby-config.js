@@ -1,28 +1,46 @@
 module.exports = {
   siteMetadata: {
     title: 'Ofstad Enterprise',
+    author: 'Henning Ofstad',
     navTitle: 'Ofstad Enterprise',
     description:
       'Software solutions for small businesses. We design and setup modern web services, like web applications and APIs for gathering data.',
     keywords: 'software, web development, data, raspberry pi, analytics',
+    social: {
+      github: `heofs`,
+    },
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
+      },
+    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/content/assets`,
+    //     name: `assets`,
+    //   },
+    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+        name: `images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/pages`,
+        name: `markdown-pages`,
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/markdown`,
-      },
-    },
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
     'gatsby-plugin-sharp',
@@ -35,9 +53,40 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'browser',
-        icon: 'src/images/cube.png', // This path is relative to the root of the site.
+        icon: 'src/images/svg/big-data.svg', // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-129592097-1',
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: ['/preview/**', '/do-not-track/me/too/'],
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: 'ofstad.io',
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-embed-gist',
+            options: {
+              username: 'heofs',
+              includeDefaultCss: true,
+            },
+          },
+        ],
+      },
+    },
   ],
 }
