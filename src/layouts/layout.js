@@ -120,16 +120,14 @@ const Layout = ({ children, title, subTitle }) => (
           />
 
           <div className="header-text-container mx-auto text-center">
-            <h1 className="header-text mb-1">{title}</h1>
-            <p className="lead mb-0">{subTitle}</p>
-            {/* {subTitle ? (<p className="lead mb-0">{subTitle}</p>) : null} */}
+            <h1 className="header-text mb-1 px-2">{title}</h1>
+            <p className="lead mb-0 px-2">{subTitle}</p>
           </div>
         </div>
 
         <div
           style={{
             margin: '0 auto',
-            // maxWidth: 1100,
             padding: '0px',
             paddingTop: 0,
             textAlign: 'center',
