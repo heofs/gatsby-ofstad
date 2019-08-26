@@ -28,14 +28,18 @@ class Header extends React.Component {
         <Link to="/" className="navbar-brand py-0">
           {this.props.navBarTitle}
         </Link>
-        <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+        <NavbarToggler
+          onClick={this.toggleNavbar}
+          className="mr-2"
+          aria-label="Toggle navigation"
+          aria-expanded={!this.state.collapsed}
+        ></NavbarToggler>
         <Collapse isOpen={!this.state.collapsed} navbar>
           <ul className="navbar-nav ml-auto align-items-center">
             {this.props.navItems.map((item, index) => (
               <NavItem key={index}>
                 <Link
                   className="nav-link"
-                  // activeStyle={{ color: 'red' }}
                   activeClassName="active"
                   to={item.to}
                 >
