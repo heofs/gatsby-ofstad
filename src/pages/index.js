@@ -1,61 +1,50 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from "react";
 
-import Layout from '../layouts/layout'
+import Layout from "../layouts/layout";
 
-import TextContainer from '../components/TextContainer'
-import TextImageContainer from '../components/TextImageContainer'
+import TextContainer from "../components/TextContainer";
+import TextImageContainer from "../components/TextImageContainer";
 
-import ScienceImage from '../images/svg/science.svg'
-import ServerImage from '../images/svg/server.svg'
+import ScienceImage from "../images/svg/science.svg";
+import ServerImage from "../images/svg/server.svg";
 
-const IndexPage = ({ data }) => {
-  const { markdownRemark } = data
-  const { frontmatter } = markdownRemark
-  //   const { frontmatter, html } = markdownRemark
+const IndexPage = () => {
   return (
     <Layout
-      title={frontmatter.particlesTitle}
-      subTitle={frontmatter.particlesSubTitle}
+      title={"Data harvesting from sensors"}
+      subTitle={"Industrial sensors uploading data to the cloud for analysis."}
     >
-      <TextContainer title={frontmatter.textContainerTitle} greyBG={true}>
-        {frontmatter.textContainerText}
+      <TextContainer title={"What we offer"} greyBG={true}>
+        We build services that interface with data collection points. We set up
+        the systems that gather the data from your preferred sensor. We will
+        then draw meaning from the large amounts of data by analysing and
+        visualizing the data using modern techniques.
       </TextContainer>
       <TextImageContainer
-        title={frontmatter.firstContainerTitle}
+        title={"A Modern Stack"}
         image={ScienceImage}
         imageLeft={false}
         greyBG={false}
         spinningImage={true}
       >
-        {frontmatter.firstContainerText}
+        Built using modern electronics, frameworks and services to make your
+        application future proof. We use technologies like Machine Learning,
+        Python, single-board computers, Google Cloud, Big Data and Data Mining
+        to deliver the best possible service to our customers.
       </TextImageContainer>
       <TextImageContainer
-        title={frontmatter.secondContainerTitle}
+        title={"Reliability"}
         image={ServerImage}
         imageLeft={true}
         greyBG={true}
       >
-        {frontmatter.secondContainerText}
+        Stability, reliability and security for our services is one of the most
+        important parts of what we do, that is why we offer hosting your
+        solution in the cloud. In some situations an onsite server can be used
+        if it is deemed to be the better solution to your problem.
       </TextImageContainer>
     </Layout>
-  )
-}
-export const pageQuery = graphql`
-  query IndexPageQuery {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        particlesTitle
-        particlesSubTitle
-        textContainerTitle
-        textContainerText
-        firstContainerTitle
-        firstContainerText
-        secondContainerTitle
-        secondContainerText
-      }
-    }
-  }
-`
+  );
+};
 
-export default IndexPage
+export default IndexPage;

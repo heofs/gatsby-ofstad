@@ -1,63 +1,50 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 
 import Layout from '../layouts/layout'
 
-// import TextContainer from '../components/TextContainer'
 import TextImageContainer from '../components/TextImageContainer'
 
 import SensorImage from '../images/svg/bio-sensor.svg'
 import AnalyticsImage from '../images/svg/analytics.svg'
 import CloudImage from '../images/svg/cloud.svg'
 
-const ServicesPage = ({ data }) => {
-  const { markdownRemark } = data
-  const { frontmatter } = markdownRemark
+const ServicesPage = () => {
   return (
-    <Layout title={frontmatter.particlesTitle}>
+    <Layout title={'Services'}>
       <TextImageContainer
-        title={frontmatter.firstContainerTitle}
+        title={'Sensors'}
         image={SensorImage}
         imageLeft={true}
         greyBG={true}
       >
-        {frontmatter.firstContainerText}
+        We provide a system that is able to gather sensor information on your
+        target point. For example sensors for humidity, temperature, counting,
+        pressure and flow. An ideal system we recommend is the Raspberry Pi,
+        which is a small affordable single-board computer that can be mounted
+        anywhere.
       </TextImageContainer>
       <TextImageContainer
-        title={frontmatter.secondContainerTitle}
+        title={'Visualizing Data'}
         image={AnalyticsImage}
         imageLeft={false}
         greyBG={false}
       >
-        {frontmatter.secondContainerText}
+        Big data sets is often gathered from a large network of sensors, and
+        putting this data into perspective is key to success.
       </TextImageContainer>
       <TextImageContainer
-        title={frontmatter.thirdContainerTitle}
+        title={'Cloud Setup'}
         image={CloudImage}
         imageLeft={true}
         greyBG={true}
       >
-        {frontmatter.thirdContainerText}
+        If your service needs to be in the cloud, we will take care of the setup
+        process to get your service up and running. A cloud service like Google
+        Cloud will eliminate issues with scalability and storage and help future
+        proof your service.
       </TextImageContainer>
     </Layout>
   )
 }
-
-export const pageQuery = graphql`
-  query ServicesPageQuery {
-    markdownRemark(frontmatter: { templateKey: { eq: "services-page" } }) {
-      frontmatter {
-        particlesTitle
-        particlesSubTitle
-        firstContainerTitle
-        firstContainerText
-        secondContainerTitle
-        secondContainerText
-        thirdContainerTitle
-        thirdContainerText
-      }
-    }
-  }
-`
 
 export default ServicesPage
